@@ -1,0 +1,191 @@
+/* Header.css */
+.header-component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background-color: rgba(34, 34, 34, 0.5);
+    height: 55px;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+.header-logo img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.header-navbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.header-navbar ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.header-navbar li {
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Icon Styles */
+.hamburger-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 10;
+}
+
+.hamburger-icon span {
+    width: 20px;
+    height: 1px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.book-btn button {
+    background-color: #FFC72E;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn button:hover {
+    background-color: white;
+    color: #222222;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .header-navbar ul {
+        gap: 2rem;
+    }
+
+    .header-navbar li {
+        font-size: 0.9rem;
+    }
+
+    .book-btn button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-component {
+        padding: 0 1.5rem;
+    }
+
+    .header-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .header-navbar ul {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 868px) {
+    .header-navbar ul {
+        gap: 1rem;
+    }
+
+    .header-navbar li {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .header-component {
+        padding: 0 1rem;
+    }
+
+    .header-navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background-color: rgba(34, 34, 34, 0.95);
+        flex-direction: column;
+        align-items: flex-start;
+        transition: right 0.3s ease-in-out;
+        padding: 100px 1.5rem 0;
+    }
+
+    .header-navbar.open {
+        right: 0;
+    }
+
+    .header-navbar ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .header-navbar li {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .book-btn {
+        margin-top: 2rem;
+    }
+
+    .book-btn button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .hamburger-icon {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-component {
+        padding: 0 1rem;
+    }
+
+    .header-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-navbar {
+        width: 80%;
+    }
+}

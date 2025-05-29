@@ -1,0 +1,172 @@
+/* Ensure section padding is responsive */
+.workflow-section {
+    background-color: #55605c;
+    color: white;
+    padding: 60px 20px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* Header section adjustment */
+.our-workflow-header {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Title section layout */
+.our-workflow-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.our-workflow-title h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fffdfd;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-family: 'Gilda Display', serif;
+    white-space: normal;
+}
+
+.our-service-line-heading {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #f6c90e;
+    border: none;
+    min-width: 30px;
+}
+
+/* Subtitle container */
+.our-workflow-line-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.our-workflow-line {
+    width: 30px;
+    height: 2px;
+    background-color: #f6c90e;
+}
+
+.our-workflow-subtitle {
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    color: #f6c90e;
+    font-size: 0.9rem;
+}
+
+/* Cards container */
+.workflow-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Individual card */
+.workflow-card {
+    background: transparent;
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.workflow-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon container */
+.workflow-icon-circle {
+    width: 100px;
+    height: 100px;
+    background: white;
+    color: #55605c;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.workflow-step-number {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #f6c90e;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workflow-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0;
+    color: #f6c90e;
+}
+
+.workflow-card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .workflow-card {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .our-workflow-title h2 {
+        font-size: 20px;
+    }
+
+    .our-workflow-subtitle {
+        font-size: 14px;
+    }
+
+    .workflow-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .workflow-icon-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    .workflow-step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+}
