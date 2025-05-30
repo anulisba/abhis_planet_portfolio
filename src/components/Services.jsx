@@ -15,16 +15,17 @@ const services = [
 const OurServices = () => {
     return (
         <section className="our-services-section">
-            <div className="our-services-header">
-                <div className='our-service-title'>
-                    <h2>Interior Solutions Tailored<br />To You</h2><div className="our-service-line-heading" />
-                </div>
-                <div className="about-us-line-container">
-                    <div className="about-us-line" />
-                    <span className="about-us-subtitle">OUR SERVICES</span>
+            <div className="our-services-header-padding">
+                <div className="our-services-header">
+                    <div className='our-service-title'>
+                        <h2>Interior Solutions Tailored<br />To You</h2><div className="our-service-line-heading" />
+                    </div>
+                    <div className="about-us-line-container">
+                        <div className="about-us-line" />
+                        <span className="about-us-subtitle">OUR SERVICES</span>
+                    </div>
                 </div>
             </div>
-
             <div className="our-services-grid-wrapper">
 
                 <div className="our-services-grid">

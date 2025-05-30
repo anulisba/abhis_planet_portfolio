@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './LandingPage.css';
 import Header from './Header';
 import bg1 from '../assets/bg.jpg'
-import bg2 from '../assets/project1.png'
-import bg3 from '../assets/project2.png'
+import bg2 from '../assets/bg1.jpg'
+import bg3 from '../assets/bg2.png'
 import AboutUs from './AboutUs';
 import OurServices from './Services';
 import ReportCounter from './ReportCounter';
@@ -14,6 +14,10 @@ import OurWorkFlow from './OurServices';
 import CustomerReviews from './CustomerReviews';
 import Footer from './Footer';
 import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
+import ProjectDetailPage from './ProjectDetail';
+import ProjectsPage from './AllProject';
+import ContactSection from './ContactUs';
+import ContactLandingSection from './ContactLanding';
 
 
 const LandingPage = () => {
@@ -38,7 +42,7 @@ const LandingPage = () => {
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentIndex}
-                            className="background-image"
+                            className="landing-background-image"
                             style={{ backgroundImage: `url(${images[currentIndex]})` }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -47,21 +51,21 @@ const LandingPage = () => {
                         />
                     </AnimatePresence>
 
-                    <div className="loverlay" />
+                    <div className="landing-loverlay" />
 
                     <motion.div
                         initial={{ y: "100%", opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 2 }}
-                        className="hero"
+                        className="landing-hero"
                     >
-                        <div className="hero-content">
+                        <div className="landing-hero-content">
                             <h1>Elevating Spaces with Timeless <br />Interior Elegance</h1>
                             <p>
                                 Abhi’s Planet transforms everyday spaces into extraordinary experiences.
                                 From modern minimalism to luxurious comfort,<br /> we design interiors that reflect your personality, purpose, and lifestyle.
                             </p>
-                            <button className="contact-btn">Contact Us</button>
+                            <button className="landing-contact-btn">Contact Us</button>
                         </div>
                     </motion.div>
 
@@ -96,7 +100,11 @@ const LandingPage = () => {
 
             <section id='us'>
                 <CustomerReviews />
-            </section><section id='us'>
+            </section>
+            <section id='us'>
+                <ContactLandingSection />
+            </section>
+            <section id='us'>
                 <Footer />
             </section>
         </div>

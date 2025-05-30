@@ -1,13 +1,3 @@
-/* Reset and base styles */
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    font-family: 'Gilda Display', serif;
-}
-
 /* SECTION */
 section#home {
     width: 100%;
@@ -26,7 +16,7 @@ section#home {
 }
 
 /* BACKGROUND IMAGE */
-.background-image {
+.landing-background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,7 +28,7 @@ section#home {
 }
 
 /* OVERLAY */
-.loverlay {
+.landing-loverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,7 +39,7 @@ section#home {
 }
 
 /* HERO */
-.hero {
+.landing-hero {
     position: relative;
     z-index: 3;
     display: flex;
@@ -61,11 +51,11 @@ section#home {
     color: white;
 }
 
-.hero-content {
+.landing-hero-content {
     max-width: 700px;
 }
 
-.hero-content h1 {
+.landing-hero-content h1 {
     font-size: 48px;
     font-weight: 100;
     line-height: 4rem;
@@ -73,7 +63,7 @@ section#home {
     font-family: 'Gilda Display', serif;
 }
 
-.hero-content p {
+.landing-hero-content p {
     font-size: 18px;
     margin-bottom: 1.5rem;
     color: #ddd;
@@ -81,7 +71,7 @@ section#home {
     font-family: 'Gilda Display', serif;
 }
 
-.contact-btn {
+.landing-contact-btn {
     background-color: #FFC72E;
     color: white;
     border: none;
@@ -94,7 +84,7 @@ section#home {
     transition: background-color 0.3s ease;
 }
 
-.contact-btn:hover {
+.landing-contact-btn:hover {
     background-color: #e0a800;
 }
 
@@ -127,28 +117,28 @@ section#home {
 
 /* RESPONSIVE STYLES */
 @media (max-width: 768px) {
-    .hero {
+    .landing-hero {
         padding: 40px 20px;
         align-items: center;
         text-align: justify;
     }
 
-    .hero-content {
+    .landing-hero-content {
         max-width: 100%;
     }
 
-    .hero-content h1 {
+    .landing-hero-content h1 {
         font-size: 24px;
         line-height: 30px;
         margin-bottom: 0.75rem;
     }
 
-    .hero-content p {
+    .landing-hero-content p {
         font-size: 14px;
         margin-bottom: 1rem;
     }
 
-    .contact-btn {
+    .landing-contact-btn {
         width: 140px;
         font-size: 12px;
         padding: 6px 12px;
@@ -162,12 +152,12 @@ section#home {
         font-size: 32px;
     }
 
-    .background-image {
+    .landing-background-image {
         height: auto;
         min-height: 100%;
     }
 
-    .loverlay {
+    .landing-loverlay {
         height: 100%;
     }
 }

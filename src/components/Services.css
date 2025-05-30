@@ -10,10 +10,14 @@
 .our-services-header {
     text-align: left;
     margin-bottom: 2.5rem;
-    padding: 0 100px;
+
     z-index: 2;
     position: relative;
-    background-color: #fff;
+}
+
+.our-services-header-padding {
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .our-service-title {
