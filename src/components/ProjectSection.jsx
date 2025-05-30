@@ -36,14 +36,16 @@ const ProjectSection = () => {
                 transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
             >
-                <div className="our-services-header">
-                    <div className='our-service-title'>
-                        <h2>Spaces We've Transformed</h2>
-                        <div className="our-service-line-heading" />
-                    </div>
-                    <div className="about-us-line-container">
-                        <div className="about-us-line" />
-                        <span className="about-us-subtitle">OUR PROJECTS</span>
+                <div className="our-services-header-padding">
+                    <div className="our-services-header">
+                        <div className='our-service-title'>
+                            <h2>Spaces We've Transformed</h2>
+                            <div className="our-service-line-heading" />
+                        </div>
+                        <div className="about-us-line-container">
+                            <div className="about-us-line" />
+                            <span className="about-us-subtitle">OUR PROJECTS</span>
+                        </div>
                     </div>
                 </div>
             </motion.div>

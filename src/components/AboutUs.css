@@ -100,6 +100,7 @@
     margin-bottom: 25px;
     line-height: 1.8;
     max-width: 600px;
+    text-align: justify;
 }
 
 .button-container {
@@ -299,9 +300,7 @@
         font-size: 2.4rem;
     }
 
-    .about-us-line-container {
-        justify-content: center;
-    }
+
 
     .about-us-line-heading {
         margin: 15px auto 0;

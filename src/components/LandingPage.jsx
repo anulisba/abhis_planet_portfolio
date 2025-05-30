@@ -88,7 +88,6 @@ const LandingPage = () => {
             </section>
             <OurServices />
 
-            <ReportCounter />
 
             <section id='about-us'>
                 <ProjectSection />

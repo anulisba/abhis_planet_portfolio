@@ -18,29 +18,27 @@ const AboutUs = () => {
                 viewport={{ once: true }}
             >
                 <div className="text-content">
-                    <div className="about-us-line-container">
-                        <div className="about-us-line" />
-                        <motion.span
-                            className="about-us-subtitle"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                        >
-                            ABOUT US
-                        </motion.span>
+                    <div className="our-services-header">
+                        <div className='our-service-title'>
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.3 }}
+                            >Designing More Than Spaces,<br />We Craft Experiences</motion.h2>
+                            <div className="our-service-line-heading" />
+                        </div>
+                        <div className="about-us-line-container">
+                            <div className="about-us-line" />
+                            <motion.span
+                                className="about-us-subtitle"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                            >ABOUT US</motion.span>
+                        </div>
+
                     </div>
 
-                    <div className="about-us-heading">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                        >
-                            Designing More Than Spaces,<br />
-                            <span className="gold-accent">We Craft Experiences</span>
-                        </motion.h2>
-                        <div className="about-us-line-heading" />
-                    </div>
 
                     <div className="description-container">
                         <motion.p
