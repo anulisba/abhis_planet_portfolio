@@ -94,13 +94,21 @@ const SplashScreen = ({ onComplete }) => {
 };
 
 const LandingPage = () => {
-    const [showSplash, setShowSplash] = useState(true);
+    const [showSplash, setShowSplash] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [bg1, bg2, bg3];
 
-    // Change image every 5 seconds
+    useEffect(() => {
+        const hasSeenSplash = localStorage.getItem('hasSeenSplash');
+        if (!hasSeenSplash) {
+            setShowSplash(true);
+        } else {
+            setShowSplash(false);
+            setShowContent(true);
+        }
+    }, []);
     useEffect(() => {
         if (!showSplash) {
             const interval = setInterval(() => {
@@ -113,7 +121,7 @@ const LandingPage = () => {
 
     const handleSplashComplete = () => {
         setShowSplash(false);
-        // Small delay before showing content to allow splash to fade out
+        localStorage.setItem('hasSeenSplash', 'true');
         setTimeout(() => setShowContent(true));
     };
 
