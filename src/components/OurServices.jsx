@@ -54,6 +54,8 @@ const OurWorkFlow = () => {
 
     return (
         <section className="workflow-section" ref={ref}>
+            <div className="contact-landing-overlay"></div>
+
             <motion.div
                 className="our-workflow-header"
                 initial={{ opacity: 0, y: 30 }}
@@ -73,7 +75,7 @@ const OurWorkFlow = () => {
                 </div>
                 <div className="our-workflow-line-container">
                     <div className="our-workflow-line" />
-                    <span className="our-workflow-subtitle">OUR SERVICES</span>
+                    <span className="our-workflow-subtitle">OUR WORKFLOW</span>
                 </div>
 
             </motion.div>

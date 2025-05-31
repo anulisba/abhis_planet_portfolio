@@ -79,6 +79,7 @@
     flex-wrap: wrap;
     gap: 2.5rem;
     flex: 2;
+    justify-content: space-around;
 }
 
 .footer-column {

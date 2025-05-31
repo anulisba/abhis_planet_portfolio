@@ -17,7 +17,7 @@ const AboutUs = () => {
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
             >
-                <div className="text-content">
+                <div className="about-text-content">
                     <div className="our-services-header">
                         <div className='our-service-title'>
                             <motion.h2

@@ -8,6 +8,7 @@ import {
     MDBRow,
 } from "mdb-react-ui-kit";
 import "./CustomerReviews.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const reviews = [
     {
@@ -75,8 +76,8 @@ export default function CustomerReviews() {
                 {/* Desktop Carousel (3 reviews per slide) */}
                 <div className="d-none d-lg-block">
                     <MDBCarousel
-                        showControls
-                        showIndicators
+                        showControls={false}
+                        showIndicators={false}
                         interval={3000}
                         ride="carousel"
                         className="reviews-carousel"
@@ -92,14 +93,22 @@ export default function CustomerReviews() {
                                 </MDBRow>
                             </MDBCarouselItem>
                         ))}
+
                     </MDBCarousel>
+                    {/* <button className="custom-arrow left" >
+                        <FaChevronLeft />
+                    </button>
+                    <button className="custom-arrow right" >
+                        <FaChevronRight />
+                    </button> */}
+
                 </div>
 
                 {/* Mobile Carousel (1 review per slide) */}
                 <div className="d-lg-none">
                     <MDBCarousel
-                        showControls
-                        showIndicators
+                        showControls={false}
+                        showIndicators={false}
                         interval={3000}
                         ride="carousel"
                         className="reviews-carousel"
@@ -114,7 +123,14 @@ export default function CustomerReviews() {
                             </MDBCarouselItem>
                         ))}
                     </MDBCarousel>
+                    {/* <button className="custom-arrow left" >
+                        <MDBIcon fas icon="chevron-left" />
+                    </button>
+                    <button className="custom-arrow right" >
+                        <MDBIcon fas icon="chevron-right" />
+                    </button> */}
                 </div>
+
             </MDBContainer>
         </section>
     );

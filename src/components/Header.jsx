@@ -1,3 +1,4 @@
+// Header.jsx
 import { useState } from 'react';
 import logo from '../assets/logo.png';
 import './Header.css';
@@ -21,14 +22,18 @@ function Header() {
 
                     {/* Mobile button inside sidebar */}
                     <li className="mobile-only book-btn">
-                        <button>Book an Appointment</button>
+                        <button>Book an Appointment
+                            <div className="book-btn-hover-effect"></div>
+                        </button>
                     </li>
                 </ul>
             </div>
 
             {/* Desktop Button */}
             <div className="desktop-only book-btn">
-                <button>Book an Appointment</button>
+                <button>Book an Appointment
+                    <div className="book-btn-hover-effect"></div>
+                </button>
             </div>
 
             <div className="hamburger-icon" onClick={() => setMenuOpen(!menuOpen)}>

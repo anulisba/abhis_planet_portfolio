@@ -2,17 +2,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
-import project1 from '../assets/project1.png';
-import project2 from '../assets/project2.png';
-import project3 from '../assets/project3.png';
+import project1 from '../assets/bg.jpg';
+import project2 from '../assets/bg1.jpg';
+import project3 from '../assets/bg2.png';
 import project4 from '../assets/project1.png';
+import project5 from '../assets/project2.png';
+import project6 from '../assets/project3.png';
 import './ProjectSection.css'
 import { useNavigate } from 'react-router-dom';
 const projects = [
-    { image: project1, title: 'Living Room Design', category: 'Residential' },
-    { image: project2, title: 'Kochin Villa', category: 'Luxury' },
-    { image: project3, title: 'Modern Interior', category: 'Commercial' },
-    { image: project4, title: 'Contemporary Space', category: 'Office' },
+    {
+        id: 1,
+        title: "Modern Living Room",
+        description: "Minimalist design with warm accents creating a cozy yet sophisticated atmosphere",
+        category: "residential",
+        image: project1,
+    },
+    {
+        id: 2,
+        title: "Urban Loft",
+        description: "Industrial elements meet contemporary elegance in this metropolitan space",
+        category: "commercial",
+        image: project2,
+    },
+    {
+        id: 3,
+        title: "Lakeside Retreat",
+        description: "Nature-inspired luxury with organic materials and panoramic views",
+        category: "residential",
+        image: project3,
+    },
+    {
+        id: 4,
+        title: "Executive Office",
+        description: "Professional workspace designed for productivity and comfort",
+        category: "commercial",
+        image: project4,
+    },
+    {
+        id: 5,
+        title: "Coastal Villa",
+        description: "Beachfront elegance with organic textures and serene color palette",
+        category: "residential",
+        image: project5,
+    },
+    {
+        id: 6,
+        title: "Boutique Hotel",
+        description: "Unique guest experience through carefully curated design elements",
+        category: "hospitality",
+        image: project6,
+    }
 ];
 
 const ProjectSection = () => {
@@ -51,35 +91,36 @@ const ProjectSection = () => {
             </motion.div>
 
             <div className="projects-grid">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={project.title}
-                        className="project-section-card"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        whileHover={{ scale: 1.02 }}
+                {projects.map((project) => (
+                    <div
+                        key={project.id}
+                        className="project-card"
                     >
-                        <div className="image-container">
-                            <img src={project.image} alt={project.title} className="project-image" />
-                            <div className="shine-effect"></div>
-                        </div>
-
-                        <div className="overlay">
-                            <div className="overlay-content">
-                                <div className="category-tag">{project.category}</div>
-                                <h3 className="project-section-title">{project.title}</h3>
-                                <div className="view-project">
-                                    <span onClick={handleProjectDetail}>View Project</span>
-                                    <FaArrowRight className="arrow-icon" />
+                        <div className="card-image-container">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="card-image"
+                            />
+                            <div className="minimal-info">
+                                <h3>{project.title}</h3>
+                                <div className="project-category">{project.category}</div>
+                            </div>
+                            <div className="full-overlay">
+                                <div className="overlay-content">
+                                    <h3>{project.title}</h3>
+                                    <div className="project-category">{project.category}</div>
+                                    <p>{project.description}</p>
+                                    <button className="view-project-btn">
+                                        View Project
+                                        <span className="arrow">→</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
-
             <motion.div
                 className="project-button"
                 initial={{ opacity: 0, y: 20 }}

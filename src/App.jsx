@@ -5,6 +5,7 @@ import ProjectsPage from './components/AllProject';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProjectDetailPage from './components/ProjectDetail';
 import ScrollToTop from './components/ScrollToTop';
+import ContactSection from './components/ContactUs';
 const App = () => {
   return (
     <Router>
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='/' element={<LandingPage />} />
         <Route path='/all-project' element={<ProjectsPage />} />
         <Route path='/project-detail' element={<ProjectDetailPage />} />
+        <Route path='/contact-us' element={<ContactSection />} />
       </Routes>
     </Router>
   )

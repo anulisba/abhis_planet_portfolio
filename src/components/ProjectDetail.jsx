@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ProjectDetail.css';
 
 // Importing local images
@@ -16,19 +16,33 @@ import p110 from '../assets/project2.png';
 import Page from './ScrollToTop';
 
 const ProjectDetailPage = () => {
-    const [activeImage, setActiveImage] = useState(p1main);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOverlayVisible, setIsOverlayVisible] = useState(false);
     const [overlayImage, setOverlayImage] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRefs = useRef([]);
 
     const viewImages = [p11, p12, p13, p14, p15, p16, p17, p18, p19, p110];
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
+
+            // Check if sections are in view
+            sectionRefs.current.forEach((ref, index) => {
+                if (ref) {
+                    const rect = ref.getBoundingClientRect();
+                    const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+                    if (isInView) {
+                        ref.classList.add('visible');
+                    }
+                }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -46,24 +60,18 @@ const ProjectDetailPage = () => {
     return (
         <Page>
             <div className="project-detail">
-                {/* Back button with scroll effect */}
-                <button className={`back-button ${isScrolled ? 'scrolled' : ''}`}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    Back to Projects
-                </button>
 
-                {/* Main hero section */}
-                <div className="hero-container">
+                {/* Main hero section with fade-in */}
+                <div
+                    className="hero-container"
+                    ref={el => sectionRefs.current[0] = el}
+                >
                     <div className="hero-image-container">
                         <img
-                            src={activeImage}
+                            src={p1main}
                             alt="Main Project"
                             className="hero-image"
-                            onLoad={(e) => e.target.classList.add('loaded')}
                         />
-                        <div className="hero-overlay" />
                         <div className="hero-content">
                             <div className="project-meta">
                                 <span>Residential Design</span>
@@ -76,10 +84,14 @@ const ProjectDetailPage = () => {
                         </div>
                     </div>
 
-                    <div className="project-description">
+                    <div
+                        className="project-description"
+                        ref={el => sectionRefs.current[1] = el}
+                    >
                         <p>
-                            This modern living room design blends minimalism with functionality. Neutral tones and elegant accents create
-                            a warm and inviting space. Carefully selected furniture and decor elements enhance both style and comfort.
+                            This modern living room design blends minimalism with functionality.
+                            Neutral tones and elegant accents create a warm and inviting space.
+                            Carefully selected furniture and decor elements enhance both style and comfort.
                         </p>
                         <div className="project-details">
                             <div className="detail-item">
@@ -98,8 +110,11 @@ const ProjectDetailPage = () => {
                     </div>
                 </div>
 
-                {/* Gallery section */}
-                <div className="gallery-section">
+                {/* Gallery section with enhanced hover */}
+                <div
+                    className="gallery-section"
+                    ref={el => sectionRefs.current[1] = el}
+                >
                     <div className="section-header">
                         <h2>Project Gallery</h2>
                         <p>Explore the transformation through detailed visuals</p>
@@ -109,77 +124,96 @@ const ProjectDetailPage = () => {
                         {viewImages.map((img, index) => (
                             <div
                                 key={index}
-                                className="gallery-item"
+                                className={`gallery-item ${index === 0 ? 'featured' : ''}`}
                                 onClick={() => openOverlay(img)}
                             >
                                 <img
                                     src={img}
                                     alt={`View ${index + 1}`}
                                     className="gallery-image"
-                                    onLoad={(e) => e.target.classList.add('loaded')}
                                 />
                                 <div className="image-overlay">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="white" strokeWidth="2" />
-                                        <path d="M21 12C19.1114 14.991 15.7183 17 12 17C8.2817 17 4.88856 14.991 3 12C4.88856 9.009 8.2817 7 12 7C15.7183 7 19.1114 9.009 21 12Z" stroke="white" strokeWidth="2" />
-                                    </svg>
+                                    <div className="zoom-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" strokeWidth="2" />
+                                            <path d="M21 12C19.1114 14.991 15.7183 17 12 17C8.2817 17 4.88856 14.991 3 12C4.88856 9.009 8.2817 7 12 7C15.7183 7 19.1114 9.009 21 12Z" stroke="currentColor" strokeWidth="2" />
+                                        </svg>
+                                    </div>
+                                    <div className="image-title">View </div>
                                 </div>
+                                <div className="shine-effect"></div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Design philosophy section */}
-                <div className="philosophy-section">
-                    <div className="section-header">
-                        <h2>Design Philosophy</h2>
-                        <p>The thinking behind our approach</p>
-                    </div>
-
-                    <div className="philosophy-grid">
-                        <div className="philosophy-card">
-                            <div className="card-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 21H21M4 18H20M6 18V13M10 18V10M14 18V15M18 18V8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                                    <path d="M3 7L12 3L21 7V10H3V7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                {/* Design philosophy section with animated points */}
+                <div
+                    className="philosophy-section"
+                    ref={el => sectionRefs.current[2] = el}
+                >
+                    <div className="philosophy-content">
+                        <div className="text-content">
+                            <h2>Design Philosophy</h2>
+                            <p>
+                                Our approach centers on creating spaces that harmonize form and function.
+                                We believe in the power of simplicity, where every element serves a purpose
+                                and contributes to the overall aesthetic.
+                            </p>
+                            <div className="philosophy-points">
+                                <div className="point">
+                                    <div className="point-number">01</div>
+                                    <div>
+                                        <h3>Spatial Harmony</h3>
+                                        <p>Creating balanced proportions and flow between different areas</p>
+                                    </div>
+                                </div>
+                                <div className="point">
+                                    <div className="point-number">02</div>
+                                    <div>
+                                        <h3>Light & Texture</h3>
+                                        <p>Strategic use of natural light and layered textures</p>
+                                    </div>
+                                </div>
+                                <div className="point">
+                                    <div className="point-number">03</div>
+                                    <div>
+                                        <h3>Minimalist Elegance</h3>
+                                        <p>Focus on essential elements and clean lines</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h3>Spatial Harmony</h3>
-                            <p>Creating balanced proportions and flow between different areas to enhance functionality and aesthetics.</p>
                         </div>
-
-                        <div className="philosophy-card">
-                            <div className="card-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 3V5M18 21V19M21 12H19M5 12H3M16.9497 7.05025L15.5355 8.46447M8.46447 15.5355L7.05025 16.9497M16.9497 16.9497L15.5355 15.5355M8.46447 8.46447L7.05025 7.05025M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                            <h3>Light & Texture</h3>
-                            <p>Strategic use of natural light and layered textures to create depth and atmosphere throughout the space.</p>
-                        </div>
-
-                        <div className="philosophy-card">
-                            <div className="card-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 7H20M4 12H20M4 17H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                            <h3>Minimalist Elegance</h3>
-                            <p>Focus on essential elements, clean lines, and uncluttered spaces to achieve timeless sophistication.</p>
+                        <div className="philosophy-image">
+                            <img src={p12} alt="Design philosophy" />
+                            <div className="image-overlay-tint"></div>
                         </div>
                     </div>
                 </div>
 
-                {/* Image overlay for lightbox */}
+                {/* Image overlay for lightbox with fade */}
                 {isOverlayVisible && (
-                    <div className="image-overlay-modal" onClick={closeOverlay}>
+                    <div
+                        className="image-overlay-modal"
+                        onClick={closeOverlay}
+                        style={{ animation: 'fadeIn 0.4s forwards' }}
+                    >
                         <div className="modal-content" onClick={e => e.stopPropagation()}>
-                            <button className="close-modal" onClick={closeOverlay}>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button
+                                className="close-modal"
+                                onClick={closeOverlay}
+
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </button>
-                            <img src={overlayImage} alt="Full size" className="overlay-image" />
+                            <img
+                                src={overlayImage}
+                                alt="Full size"
+                                className="overlay-image"
+                                style={{ animation: 'scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards' }}
+                            />
                         </div>
                     </div>
                 )}
