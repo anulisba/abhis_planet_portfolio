@@ -14,6 +14,8 @@ import p18 from '../assets/project2.png';
 import p19 from '../assets/project1.png';
 import p110 from '../assets/project2.png';
 import Page from './ScrollToTop';
+import Header from './Header';
+import Footer from './Footer';
 
 const ProjectDetailPage = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +62,7 @@ const ProjectDetailPage = () => {
     return (
         <Page>
             <div className="project-detail">
-
+                <Header />
                 {/* Main hero section with fade-in */}
                 <div
                     className="hero-container"
@@ -217,6 +219,7 @@ const ProjectDetailPage = () => {
                         </div>
                     </div>
                 )}
+                <Footer />
             </div>
         </Page>
     );

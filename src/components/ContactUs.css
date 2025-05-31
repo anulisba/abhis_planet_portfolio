@@ -4,6 +4,7 @@
     background: var(--white-);
     position: relative;
     overflow: hidden;
+    background-color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
