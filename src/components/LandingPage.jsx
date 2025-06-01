@@ -326,10 +326,23 @@ const LandingPage = () => {
         }
     }, [showContent]);
 
+    useEffect(() => {
+        const clearOnExit = () => {
+            localStorage.removeItem('hasSeenSplash');
+            localStorage.removeItem('popupShown');
+        };
+
+        window.addEventListener('beforeunload', clearOnExit);
+        return () => {
+            window.removeEventListener('beforeunload', clearOnExit);
+        };
+    }, []);
+
     const handleSplashComplete = () => {
         setShowSplash(false);
-        localStorage.setItem('hasSeenSplash', 'false');
+        localStorage.setItem('hasSeenSplash', 'true'); // important fix
     };
+
     return (
         <div className="app-container">
             <AnimatePresence mode="wait">
