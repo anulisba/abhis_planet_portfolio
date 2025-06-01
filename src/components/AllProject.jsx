@@ -11,12 +11,13 @@ import project6 from '../assets/project3.png';
 import Page from './ScrollToTop';
 import Footer from './Footer';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const ProjectsPage = () => {
     const [activeFilter, setActiveFilter] = useState('all');
     const [isScrolled, setIsScrolled] = useState(false);
     const projectRefs = useRef([]);
-
+    const navigate = useNavigate();
     const projects = [
         {
             id: 1,
@@ -109,7 +110,9 @@ const ProjectsPage = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
+    const handleProjectDetail = (project) => {
+        navigate("/project-detail", { state: { project } })
+    }
     return (
         <Page>
             <div className="projects-page">
@@ -177,7 +180,7 @@ const ProjectsPage = () => {
                                         <h3>{project.title}</h3>
                                         <div className="project-category">{project.category}</div>
                                         <p>{project.description}</p>
-                                        <button className="view-project-btn">
+                                        <button className="view-project-btn" onClick={() => handleProjectDetail(project)}>
                                             View Project
                                             <span className="arrow">→</span>
                                         </button>

@@ -73,7 +73,6 @@ const AboutUs = () => {
                         <motion.button
                             className="about-us-button"
                             whileHover={{
-                                backgroundColor: "#1a1a1a",
                                 color: "#ffffff"
                             }}
                             whileTap={{ scale: 0.98 }}
@@ -98,7 +97,7 @@ const AboutUs = () => {
                             whileHover={{ scale: 1.03 }}
                             transition={{ duration: 0.4 }}
                         >
-                            <img src={img1} alt="Luxury interior design" />
+                            <img src="https://res.cloudinary.com/dpo91btlc/image/upload/v1748751683/modern-minimalist-office_2_xxopco.jpg" alt="Luxury interior design" />
                         </motion.div>
                         <div className="secondary-images">
                             <motion.div
@@ -106,19 +105,19 @@ const AboutUs = () => {
                                 whileHover={{ scale: 1.03 }}
                                 transition={{ duration: 0.4 }}
                             >
-                                <img src={img2} alt="Design detail" />
+                                <img src="https://res.cloudinary.com/dpo91btlc/image/upload/v1748697877/IMG_2211_ylsviu.jpg" alt="Design detail" />
                             </motion.div>
                             <motion.div
                                 className="image-3"
                                 whileHover={{ scale: 1.03 }}
                                 transition={{ duration: 0.4 }}
                             >
-                                <img src={img3} alt="Material texture" />
+                                <img src="https://res.cloudinary.com/dpo91btlc/image/upload/v1748751402/3d-rendering-luxury-modern-living-room-with-fabric-sofa_uglzwv.jpg" alt="Material texture" />
                             </motion.div>
                         </div>
                     </motion.div>
 
-                    <motion.div
+                    {/* <motion.div
                         className="stats-container"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +149,7 @@ const AboutUs = () => {
                             <div className="stat-value">50+</div>
                             <div className="stat-label">Awards Received</div>
                         </motion.div>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </motion.div>
 
@@ -161,7 +160,7 @@ const AboutUs = () => {
                 transition={{ duration: 0.8, delay: 0.7 }}
             >
                 <div className="signature-line"></div>
-                <div className="signature">Founder & Creative Director</div>
+                <div className="signature">Founder & Creative Director - Abhilash Prasadh</div>
             </motion.div>
         </section>
     );

@@ -5,7 +5,7 @@ import './LandingPage.css';
 import Header from './Header';
 import bg1 from '../assets/bg.jpg'
 import bg2 from '../assets/bg1.jpg'
-import bg3 from '../assets/bg2.png'
+import bg3 from '../assets/bg2.jpg'
 import AboutUs from './AboutUs';
 import OurServices from './Services';
 import ReportCounter from './ReportCounter';
@@ -16,37 +16,42 @@ import Footer from './Footer';
 import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
 import ContactLandingSection from './ContactLanding';
 import logo from '../assets/logo.png'
+import { useNavigate } from 'react-router-dom';
+import { FaPaperPlane } from 'react-icons/fa';
 const SplashScreen = ({ onComplete }) => {
     const [step, setStep] = useState(0);
-    const companyName = "Abhi's Planet";
-    const letters = companyName.split('');
+
+    const companyName = "Abhi's   Planet";
+    const tagline = "Crafting digital elegance.";
+    const nameLetters = companyName.split('');
+    const taglineLetters = tagline.split('');
 
     useEffect(() => {
+        const totalSteps = nameLetters.length + taglineLetters.length + 2;
+
         const timer = setTimeout(() => {
-            if (step < letters.length) {
+            if (step < totalSteps - 1) {
                 setStep(step + 1);
-            } else if (step === letters.length) {
-                // After all letters appear, show logo
-                setStep(letters.length + 1);
             } else {
-                // After logo animation, transition to landing page
+                // Final delay before exiting splash
                 setTimeout(() => {
                     onComplete();
                 }, 1000);
             }
-        }, step < letters.length ? 150 : 500);
+        }, step < nameLetters.length ? 150 : 60); // Faster for tagline for smoother flow
 
         return () => clearTimeout(timer);
-    }, [step, letters.length, onComplete]);
+    }, [step, nameLetters.length, taglineLetters.length, onComplete]);
 
     return (
         <div className="splash-container">
             <div className="splash-content">
+                {/* Title Animation */}
                 <AnimatePresence>
-                    {step > letters.length && (
+                    {step > nameLetters.length + taglineLetters.length && (
                         <motion.div
                             className="logo-container"
-                            initial={{ scale: 0.8, opacity: 0 }}
+                            initial={{ scale: 0.5, opacity: 0 }}
                             animate={{
                                 scale: 1,
                                 opacity: 1,
@@ -65,9 +70,8 @@ const SplashScreen = ({ onComplete }) => {
                         </motion.div>
                     )}
                 </AnimatePresence>
-                {/* Text animation with left-to-right reveal */}
                 <div className="name-container">
-                    {letters.map((letter, index) => (
+                    {nameLetters.map((letter, index) => (
                         <motion.span
                             key={index}
                             className="name-letter"
@@ -86,10 +90,190 @@ const SplashScreen = ({ onComplete }) => {
                     ))}
                 </div>
 
-                {/* Logo animation after text */}
+                {/* Tagline Animation */}
+                {step > nameLetters.length && (
+                    <div className="tagline-container">
+                        {taglineLetters.map((letter, index) => {
+                            const show = step > nameLetters.length + index;
+                            return (
+                                <motion.span
+                                    key={index}
+                                    className="tagline-letter"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: show ? 1 : 0 }}
+                                    transition={{ duration: 0.03 }}
+                                >
+                                    {letter}
+                                </motion.span>
+                            );
+                        })}
+                    </div>
+                )}
+
+                {/* Logo Animation */}
 
             </div>
         </div>
+    );
+};
+
+
+
+const ContactPopup = ({ onClose }) => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    });
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        // Simulate API call
+        setTimeout(() => {
+            console.log('Form submitted:', formData);
+            setIsSubmitted(true);
+            setIsSubmitting(false);
+
+            // Optional: auto-close after success
+            setTimeout(() => {
+                onClose();
+            }, 3000);
+        }, 1500);
+    };
+
+    return (
+        <motion.div
+            className="contact-popup-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            <motion.div
+                className="contact-popup"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25 }}
+            >
+                <button className="popup-close-btn" onClick={onClose}>✕</button>
+                <h2>Interested in Our Services?</h2>
+                <p>Leave your details and we'll get back to you!</p>
+
+                <motion.div
+                    className="contact-form-popup-container"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                >
+                    {isSubmitted ? (
+                        <div className="success-message">
+                            <FaPaperPlane className="success-icon" />
+                            <h3>Message Sent Successfully!</h3>
+                            <p>Thank you for contacting us. We'll get back to you soon.</p>
+                        </div>
+                    ) : (
+                        <form className="contact-popup-form" onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="Your Name"
+                                    required
+                                    className="form-input"
+                                />
+                                <span className="input-highlight"></span>
+                            </div>
+
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="Email Address"
+                                        required
+                                        className="form-input"
+                                    />
+                                    <span className="input-highlight"></span>
+                                </div>
+
+                                <div className="form-group">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="Phone Number"
+                                        className="form-input"
+                                    />
+                                    <span className="input-highlight"></span>
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    placeholder="Subject"
+                                    required
+                                    className="form-input"
+                                />
+                                <span className="input-highlight"></span>
+                            </div>
+
+                            <div className="form-group">
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="Your Message"
+                                    rows="4"
+                                    required
+                                    className="form-textarea"
+                                ></textarea>
+                                <span className="input-highlight"></span>
+                            </div>
+
+                            <motion.button
+                                className="submit-btn"
+                                type="submit"
+                                disabled={isSubmitting}
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                {isSubmitting ? (
+                                    <span>Sending...</span>
+                                ) : (
+                                    <>
+                                        <span>Send Message</span>
+                                        <FaPaperPlane className="send-icon" />
+                                    </>
+                                )}
+                                <div className="btn-hover-effect"></div>
+                            </motion.button>
+                        </form>
+                    )}
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 };
 
@@ -97,8 +281,13 @@ const LandingPage = () => {
     const [showSplash, setShowSplash] = useState(false);
     const [showContent, setShowContent] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
-
+    const [showPopup, setShowPopup] = useState(false);
     const images = [bg1, bg2, bg3];
+    const navigate = useNavigate();
+
+    const contactus = () => {
+        navigate('/contact-us')
+    }
 
     useEffect(() => {
         const hasSeenSplash = localStorage.getItem('hasSeenSplash');
@@ -106,11 +295,15 @@ const LandingPage = () => {
             setShowSplash(true);
         } else {
             setShowSplash(false);
-            setShowContent(true);
+            // Don't set showContent here - will be handled by the next useEffect
         }
     }, []);
+
     useEffect(() => {
         if (!showSplash) {
+            // Set showContent to true only when splash screen is hidden
+            setShowContent(true);
+
             const interval = setInterval(() => {
                 setCurrentIndex((prev) => (prev + 1) % images.length);
             }, 5000);
@@ -119,12 +312,24 @@ const LandingPage = () => {
         }
     }, [showSplash]);
 
+    useEffect(() => {
+        if (showContent) {
+            const popupShown = localStorage.getItem('popupShown');
+            if (!popupShown) {
+                const popupTimer = setTimeout(() => {
+                    setShowPopup(true);
+                    localStorage.setItem('popupShown', 'true');
+                }, 15000);
+
+                return () => clearTimeout(popupTimer);
+            }
+        }
+    }, [showContent]);
+
     const handleSplashComplete = () => {
         setShowSplash(false);
-        localStorage.setItem('hasSeenSplash', 'true');
-        setTimeout(() => setShowContent(true));
+        localStorage.setItem('hasSeenSplash', 'false');
     };
-
     return (
         <div className="app-container">
             <AnimatePresence mode="wait">
@@ -169,7 +374,9 @@ const LandingPage = () => {
                                                     Abhi’s Planet transforms everyday spaces into extraordinary experiences.
                                                     From modern minimalism to luxurious comfort,<br /> we design interiors that reflect your personality, purpose, and lifestyle.
                                                 </p>
-                                                <button className="landing-contact-btn">Contact Us</button>
+                                                <button className="landing-contact-btn" onClick={contactus}>Contact Us
+                                                    <div className="landing-btn-hover-effect"></div>
+                                                </button>
                                             </div>
                                         </motion.div>
 
@@ -209,6 +416,11 @@ const LandingPage = () => {
                             </>
                         )}
                     </motion.div>
+                )}
+            </AnimatePresence>
+            <AnimatePresence>
+                {showPopup && (
+                    <ContactPopup onClose={() => setShowPopup(false)} />
                 )}
             </AnimatePresence>
         </div>

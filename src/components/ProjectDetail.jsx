@@ -121,27 +121,14 @@ const ProjectDetailPage = () => {
                         <h2>Project Gallery</h2>
                         <p>Explore the transformation through detailed visuals</p>
                     </div>
-                    <div className="gallery-grid">
+                    <div className="gallery-grid-modern">
                         {viewImages.map((img, index) => (
-                            <div
-                                key={index}
-                                className={`gallery-item ${index === 0 ? 'featured' : ''}`}
-                                onClick={() => openOverlay(img)}
-                            >
-                                <img src={img} alt={`View ${index + 1}`} className="gallery-image" />
-                                <div className="image-overlay">
-                                    <div className="zoom-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="currentColor" strokeWidth="2" />
-                                            <path d="M21 12C19.1114 14.991 15.7183 17 12 17C8.2817 17 4.88856 14.991 3 12C4.88856 9.009 8.2817 7 12 7C15.7183 7 19.1114 9.009 21 12Z" stroke="currentColor" strokeWidth="2" />
-                                        </svg>
-                                    </div>
-                                    <div className="image-title">View</div>
-                                </div>
-                                <div className="shine-effect"></div>
+                            <div key={index} className="gallery-tile" onClick={() => openOverlay(img)}>
+                                <img src={img} alt={`Project View ${index + 1}`} />
                             </div>
                         ))}
                     </div>
+
                 </div>
 
                 {/* Design Philosophy Section */}

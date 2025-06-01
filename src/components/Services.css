@@ -127,7 +127,7 @@
 
 .service-card:hover .service-icon {
     transform: scale(1.15);
-    color: #d4a755;
+    color: #dfb50e;
 }
 
 .service-card h3 {

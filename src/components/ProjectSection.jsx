@@ -2,10 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
-import project3 from '../assets/bg2.png';
-import project4 from '../assets/project1.png';
-import project5 from '../assets/project2.png';
-import project6 from '../assets/project3.png';
 import './ProjectSection.css'
 import { useNavigate } from 'react-router-dom';
 const projects = [

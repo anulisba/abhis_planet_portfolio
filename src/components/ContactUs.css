@@ -349,12 +349,12 @@
 
 .success-icon {
     font-size: 3rem;
-    color: #6366f1;
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
 .success-message h3 {
-    color: #1e293b;
+    color: var(--secondary-color);
     font-size: 1.3rem;
     /* proportional to 1.8rem */
     margin-bottom: 15px;

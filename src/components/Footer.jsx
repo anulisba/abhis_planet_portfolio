@@ -13,7 +13,7 @@ const Footer = () => {
                                 <img src={logo} alt="Aim Sports Wear" />
                             </div>
                             <p className="brand-description">
-                                Elevating athletic performance through premium sportswear that combines innovative design with superior comfort.
+                                Transforming spaces into elegant, functional, and timeless interiors that reflect your unique personality and lifestyle.
                             </p>
                             <div className="social-icons">
                                 <a href="#" className="social-link">
@@ -38,7 +38,7 @@ const Footer = () => {
                                         </svg>
                                         <div>
                                             <span className="contact-label">Email</span>
-                                            <span className="contact-value">info@aimsportswear.com</span>
+                                            <span className="contact-value">youremail adress</span>
                                         </div>
                                     </li>
                                     <li className="contact-item">
@@ -47,7 +47,7 @@ const Footer = () => {
                                         </svg>
                                         <div>
                                             <span className="contact-label">Phone</span>
-                                            <span className="contact-value">+91 9446533322</span>
+                                            <span className="contact-value">+91 0000000000</span>
                                         </div>
                                     </li>
                                     <li className="contact-item">
@@ -56,8 +56,8 @@ const Footer = () => {
                                         </svg>
                                         <div>
                                             <span className="contact-label">Address</span>
-                                            <span className="contact-value">Matha Complex, Mupliyam</span>
-                                            <span className="contact-value">Thrissur, Kerala, India</span>
+                                            <span className="contact-value">Adress Line 1</span>
+                                            <span className="contact-value">Adress Line 2</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -66,11 +66,8 @@ const Footer = () => {
                                 <h3 className="footer-heading">Quick Links</h3>
                                 <nav className="footer-nav">
                                     <a href="#" className="nav-link">Home</a>
-                                    <a href="#" className="nav-link">Collections</a>
-                                    <a href="#" className="nav-link">Men's Wear</a>
-                                    <a href="#" className="nav-link">Women's Wear</a>
-                                    <a href="#" className="nav-link">Accessories</a>
                                     <a href="#" className="nav-link">About Us</a>
+                                    <a href="#" className="nav-link">Projects</a>
                                     <a href="#" className="nav-link">Contact</a>
                                 </nav>
                             </div>
@@ -105,13 +102,8 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-bottom">
-                        <p className="copyright">&copy; {new Date().getFullYear()} Aim Sports Wear. All rights reserved.</p>
-                        <div className="footer-links">
-                            <a href="#" className="footer-link">Privacy Policy</a>
-                            <a href="#" className="footer-link">Terms of Service</a>
-                            <a href="#" className="footer-link">Shipping Policy</a>
-                            <a href="#" className="footer-link">Returns & Exchanges</a>
-                        </div>
+                        <p className="copyright">&copy; {new Date().getFullYear()} Abhi's Planet. All rights reserved.</p>
+
                     </div>
                 </div>
 
