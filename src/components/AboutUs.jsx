@@ -47,9 +47,9 @@ const AboutUs = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            At our core, we believe that exceptional interior design transcends aesthetics to create meaningful experiences.
-                            Our approach combines timeless elegance with innovative solutions to transform spaces into personalized sanctuaries
-                            that reflect your unique identity and enhance your daily life.
+                            At Abhi's Planet, we believe interior design is about more than aesthetics — it's about crafting spaces that inspire, uplift, and feel deeply personal.
+                            Our thoughtful approach blends creativity with functionality to turn every space into a meaningful reflection of the people who live in it.
+                            We aim to create environments that not only look beautiful but also support your lifestyle and well-being.
                         </motion.p>
 
                         <motion.p
@@ -58,11 +58,12 @@ const AboutUs = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.5 }}
                         >
-                            Founded by visionary designers with over 15 years of industry experience, our studio specializes in creating
-                            harmonious environments that balance form and function. We meticulously attend to every detail, from spatial
-                            planning to material selection, ensuring each project embodies sophistication and comfort.
+                            With a passion for quality, sustainability, and innovation, our team collaborates closely with each client to understand their vision.
+                            From concept to completion, we deliver tailored design solutions that elevate your surroundings and enhance everyday living.
+                            Every project is a partnership, and we’re committed to turning your ideas into timeless spaces you’ll love.
                         </motion.p>
                     </div>
+
 
                     <motion.div
                         className="button-container"

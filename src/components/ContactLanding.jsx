@@ -3,7 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import './ContactLanding.css'
+import { useNavigate } from 'react-router-dom';
 const ContactLandingSection = () => {
+    const navigate = useNavigate();
+    const handlecontact = () => {
+        navigate('/contact-us');
+    }
     return (
         <section className="contact-landing-section">
             <div className="contact-landing-overlay"></div>
@@ -54,7 +59,7 @@ const ContactLandingSection = () => {
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.03 }}
                     >
-                        <button className="contact-landing-btn">
+                        <button className="contact-landing-btn" onClick={handlecontact}>
                             <span>Schedule a Consultation</span>
                             <FaArrowRight className="contact-landing-icon" />
                             <div className="contact-landing-btn-hover"></div>

@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 import './AboutUsPage.css';
 import Header from './Header';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 const AboutPage = () => {
-    // Update the services array with image URLs
+    const navigate = useNavigate();
+    const handlecontact = () => {
+        navigate('/contact-us');
+    }
     const services = [
         {
             title: 'Residential Design & Build',
@@ -146,18 +150,18 @@ const AboutPage = () => {
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
                         <p>
-                            Founded in 2008, Studio Aurelia emerged from a shared passion for transforming
-                            spaces into meaningful experiences. What began as a small design collective has
-                            grown into an award-winning practice recognized for our commitment to excellence.
+                            Abhi's Planet began with a simple belief — that interior design should do more than decorate; it should breathe life into spaces and connect deeply with the people who use them.
+                            What started as a passion for transforming ordinary rooms into soulful experiences has evolved into a design philosophy centered on authenticity, comfort, and beauty.
+                            Every project we take on is an opportunity to tell a unique story through thoughtful details and intuitive design.
                         </p>
                         <p>
-                            Over the past 15 years, we've cultivated a reputation for creating environments
-                            that balance aesthetic elegance with functional intelligence. Our approach
-                            combines timeless principles with contemporary sensibilities.
+                            Today, our team works hand in hand with clients to shape spaces that reflect their vision while embracing sustainability and innovation.
+                            From cozy homes to modern commercial interiors, we approach each project with care and creativity, ensuring that every corner feels considered and connected.
+                            Our story continues to unfold with every space we design — and we’re honored to be part of yours.
                         </p>
                     </motion.div>
 
-                    <motion.div
+                    {/* <motion.div
                         className="about-page-stats-container"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +180,7 @@ const AboutPage = () => {
                             <div className="about-page-stat-value">50+</div>
                             <div className="about-page-stat-label">Awards</div>
                         </div>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </section>
 
@@ -306,6 +310,7 @@ const AboutPage = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, delay: 0.2 }}
+                        onClick={handlecontact}
                     >
                         Schedule a Consultation
                     </motion.button>
