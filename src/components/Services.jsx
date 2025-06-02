@@ -26,6 +26,11 @@ const services = [
         icon: <FaHome />
     },
     {
+        title: 'Design Consultancy',
+        description: 'Expert guidance to refine your vision from concept to execution with tailored solutions.',
+        icon: <FaPencilRuler />
+    },
+    {
         title: 'Corporate Design & Build',
         description: 'Creating inspiring workspaces that reflect your brand identity and enhance productivity.',
         icon: <FaBuilding />
@@ -36,9 +41,9 @@ const services = [
         icon: <FaTree />
     },
     {
-        title: 'Design Consultancy',
-        description: 'Expert guidance to refine your vision from concept to execution with tailored solutions.',
-        icon: <FaPencilRuler />
+        title: 'Renovation Specialist',
+        description: 'Breathing new life into existing spaces with innovative transformation solutions.',
+        icon: <FaHammer />
     },
     {
         title: 'Hospitality Design',
@@ -50,11 +55,7 @@ const services = [
         description: 'Custom-crafted furniture pieces designed exclusively for your unique space.',
         icon: <FaCouch />
     },
-    {
-        title: 'Renovation Specialist',
-        description: 'Breathing new life into existing spaces with innovative transformation solutions.',
-        icon: <FaHammer />
-    },
+
     {
         title: 'Exhibition Stand Design',
         description: 'Captivating displays that effectively showcase your brand at events and expos.',

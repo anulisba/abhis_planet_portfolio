@@ -18,6 +18,7 @@ import ContactLandingSection from './ContactLanding';
 import logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom';
 import { FaPaperPlane } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 const SplashScreen = ({ onComplete }) => {
     const [step, setStep] = useState(0);
 
@@ -140,19 +141,31 @@ const ContactPopup = ({ onClose }) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
+        emailjs.send(
+            'service_6c6do5l', // replace with your actual service ID
+            'template_4t6imcx', // replace with your actual template ID
+            {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                title: formData.subject,
+                message: formData.message,
+                to_email: 'anulisbaraj@gmail.com' // optional if defined in template
+            },
+            'zQ4O3aRATuQjHFFMg' // replace with your public key
+        ).then(() => {
             setIsSubmitted(true);
             setIsSubmitting(false);
 
-            // Optional: auto-close after success
             setTimeout(() => {
                 onClose();
             }, 3000);
-        }, 1500);
+        }).catch((error) => {
+            console.error('Failed to send message:', error);
+            setIsSubmitting(false);
+            alert('Failed to send message. Please try again later.');
+        });
     };
-
     return (
         <motion.div
             className="contact-popup-overlay"

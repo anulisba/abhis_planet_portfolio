@@ -82,19 +82,20 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    max-width: 1200px;
+
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
     box-sizing: border-box;
     z-index: 2;
 }
 
 /* Individual card */
+/* Desktop - Show 5 cards in a row */
 .workflow-card {
+    flex: 1 1 calc(20% - 30px);
+    /* 5 cards per row with spacing */
+    max-width: calc(20% - 30px);
     background: transparent;
-    flex: 1 1 250px;
-    max-width: 300px;
-    padding: 20px;
     text-align: center;
     box-sizing: border-box;
     transition: transform 0.3s ease;
@@ -107,8 +108,8 @@
 
 /* Icon container */
 .workflow-icon-circle {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: white;
     color: #55605c;
     margin: 0 auto 20px;
@@ -127,9 +128,9 @@
     background-color: #f6c90e;
     color: black;
     font-weight: bold;
-    font-size: 14px;
-    width: 28px;
-    height: 28px;
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -137,8 +138,8 @@
 }
 
 .workflow-card h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     margin: 10px 0;
     color: #f6c90e;

@@ -8,22 +8,27 @@ const services = [
     {
         icon: <FaHandshake />,
         title: 'Meet Customers',
-        description: 'Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.',
+        description: 'We begin by understanding your goals and preferences through focused conversations.',
     },
     {
         icon: <FaComments />,
         title: 'Design Discussion',
-        description: 'Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.',
+        description: 'We brainstorm and present design ideas aligned with your vision and brand identity.',
     },
     {
         icon: <FaDraftingCompass />,
         title: 'Drafting Design',
-        description: 'Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.',
+        description: 'We create detailed wireframes or mockups that visually represent the final output.',
     },
     {
         icon: <FaHome />,
         title: 'Implementation',
-        description: 'Osed quia consequuntur magni dolores eos qui rati one volu ptatem sequi nesciunt.',
+        description: 'We bring the approved designs to life through clean, responsive, and functional development.',
+    },
+    {
+        icon: <FaHandshake />,
+        title: 'Final Delivery',
+        description: 'We ensure every detail is perfected before handing over the finished space or product with care and professionalism.'
     },
 ];
 

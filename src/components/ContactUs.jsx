@@ -7,6 +7,7 @@ import bg1 from '../assets/bg1.jpg';
 import Header from './Header';
 import Footer from './Footer';
 import Page from './ScrollToTop';
+import emailjs from 'emailjs-com';
 const ContactSection = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -27,15 +28,30 @@ const ContactSection = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
+        emailjs.send(
+            'service_6c6do5l', // replace with your actual service ID
+            'template_4t6imcx', // replace with your actual template ID
+            {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                title: formData.subject,
+                message: formData.message,
+                to_email: 'anulisbaraj@gmail.com' // optional if defined in template
+            },
+            'zQ4O3aRATuQjHFFMg' // replace with your public key
+        ).then(() => {
             setIsSubmitted(true);
-            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+            setIsSubmitting(false);
 
-            // Reset success message after 5 seconds
-            setTimeout(() => setIsSubmitted(false), 5000);
-        }, 1500);
+            setTimeout(() => {
+
+            }, 3000);
+        }).catch((error) => {
+            console.error('Failed to send message:', error);
+            setIsSubmitting(false);
+            alert('Failed to send message. Please try again later.');
+        });
     };
 
     return (
@@ -82,10 +98,10 @@ const ContactSection = () => {
                                         </div>
                                         <div className="info-text">
                                             <h3>Our Studio</h3>
-                                            <p>123 Design Avenue, Creative District</p>
-                                            <p>New York, NY 10001</p>
-                                            <p>+1 (555) 123-4567</p>
-                                            <p>hello@creative.studio</p>
+                                            <p>Abhi's Planet </p>
+                                            <p>UAE</p>
+                                            <p>+91 9747515517</p>
+                                            <p>abhisplanet2025@gmail.com</p>
                                         </div>
                                     </div>
 
@@ -97,8 +113,8 @@ const ContactSection = () => {
                                         </div>
                                         <div className="info-text">
                                             <h3>Working Hours</h3>
-                                            <p>Monday - Friday: 9am - 6pm</p>
-                                            <p>Saturday: 10am - 4pm</p>
+                                            <p>Monday - Saturday: 9am - 6pm</p>
+
                                         </div>
                                     </div>
 

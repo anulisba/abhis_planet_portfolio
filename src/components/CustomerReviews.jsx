@@ -12,47 +12,42 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const reviews = [
     {
-        name: "Neha Pradeep",
-        location: "Kochi, Kerala",
-        role: "Homeowner",
-        content: "Abhi's Planet turned our old house into a modern sanctuary. Every corner feels personalized and elegant. Truly the best interior design team in Kerala!",
-        avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+        name: "Alen Alex",
+        location: "Kakkanad, Kerala",
+        content: "Abhi's Planet completely reimagined our 3BHK flat. From layout optimization to premium finishes, everything was executed with precision. The result is a sophisticated home we love coming back to.",
+        avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748751402/3d-rendering-luxury-modern-living-room-with-fabric-sofa_uglzwv.jpg"
     },
     {
-        name: "Mohammed Al Nahyan",
-        location: "Abu Dhabi, UAE",
-        role: "Corporate Manager",
-        content: "Our Abu Dhabi villa now feels like a five-star retreat. The design, the color palette, and the decor are all world-class. Highly recommended!",
-        avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+        name: "Nivin Paul",
+        location: "Kakkanad, Kerala",
+        content: "We wanted a stylish yet functional makeover for our apartment, and Abhi’s Planet nailed it. Great eye for detail and thoughtful use of space — exceeded our expectations!",
+        avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748700336/2_xyjpcn.png"
     },
     {
-        name: "Anjali Nair",
-        location: "Thiruvananthapuram, Kerala",
-        role: "Boutique Owner",
-        content: "The studio completely transformed my small boutique space into something stylish and inviting. My customers often ask who designed it!",
-        avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp"
+        name: "Sambath",
+        location: "Vayttila, Kerala",
+        content: "Our compact flat was redesigned into a spacious, vibrant living area. The interiors now reflect our personality, and guests always compliment the decor. Fantastic work!",
+        avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2185_i2bhiw.jpg"
     },
     {
-        name: "Rashid Al Amiri",
-        location: "Abu Dhabi, UAE",
-        role: "Hotel Owner",
-        content: "We hired Abhi’s Planet for our hotel lobby makeover. The results were stunning — it feels luxurious yet warm. Guests are loving the vibe!",
-        avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+        name: "Akash",
+        location: "Thrissur, Kerala",
+        content: "We entrusted Abhi’s Planet with our standalone residence renovation. Their ability to blend modern aesthetics with traditional charm was impressive. It truly feels like home now.",
+        avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748751683/modern-minimalist-office_2_xxopco.jpg"
     },
     {
-        name: "Arun Dev",
+        name: "Anu",
         location: "Calicut, Kerala",
-        role: "Café Owner",
-        content: "Their design brought a cozy and trendy atmosphere to our café. Footfall has increased since the renovation, and people love the aesthetics!",
-        avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp"
+        content: "Abhi’s Planet handled our residential project with creativity and care. Every room reflects our lifestyle. It’s elegant, functional, and feels uniquely ours.",
+        avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2204_xm1wvh.jpg"
     },
     {
-        name: "Fatima Zayed",
-        location: "Abu Dhabi, UAE",
-        role: "Interior Enthusiast",
-        content: "I wanted a space that was minimal yet artistic — Abhi's Planet delivered beyond expectations. Their professionalism and eye for detail are unmatched.",
-        avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp"
+        name: "Sreedevi",
+        location: "Alappuzha, Kerala",
+        content: "Choosing Abhi’s Planet for our home interiors was the best decision we made. They brought warmth, elegance, and practicality to every room. The attention to detail truly made our house a home.",
+        avatar: "https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2195_x9p40b.jpg"
     }
+
 ];
 
 
@@ -154,7 +149,7 @@ const ReviewCard = ({ review }) => {
                 />
                 <div className="review-titles">
                     <h5 className="review-name">{review.name}</h5>
-                    <h6 className="review-role">{review.role}</h6>
+                    <h6 className="review-role">{review.location}</h6>
                 </div>
             </div>
 

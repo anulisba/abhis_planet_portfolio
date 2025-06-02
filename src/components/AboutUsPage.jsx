@@ -22,6 +22,11 @@ const AboutPage = () => {
             image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2210_l3cwqc.jpg'
         },
         {
+            title: 'Design Consultancy',
+            description: 'Expert guidance to refine your vision from concept to execution with tailored solutions.',
+            image: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+        },
+        {
             title: 'Corporate Design & Build',
             description: 'Creating inspiring workspaces that reflect your brand identity and enhance productivity.',
             image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748751683/modern-minimalist-office_2_xxopco.jpg'
@@ -32,9 +37,9 @@ const AboutPage = () => {
             image: 'https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
         },
         {
-            title: 'Design Consultancy',
-            description: 'Expert guidance to refine your vision from concept to execution with tailored solutions.',
-            image: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            title: 'Renovation Specialist',
+            description: 'Breathing new life into existing spaces with innovative transformation solutions.',
+            image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748751402/3d-rendering-luxury-modern-living-room-with-fabric-sofa_uglzwv.jpg'
         },
         {
             title: 'Hospitality Design',
@@ -46,11 +51,7 @@ const AboutPage = () => {
             description: 'Custom-crafted furniture pieces designed exclusively for your unique space.',
             image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
         },
-        {
-            title: 'Renovation Specialist',
-            description: 'Breathing new life into existing spaces with innovative transformation solutions.',
-            image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748751402/3d-rendering-luxury-modern-living-room-with-fabric-sofa_uglzwv.jpg'
-        },
+
         {
             title: 'Exhibition Stand Design',
             description: 'Captivating displays that effectively showcase your brand at events and expos.',
@@ -97,6 +98,11 @@ const AboutPage = () => {
             step: '04',
             title: 'Implementation',
             description: 'We bring the approved designs to life through clean, responsive, and functional development.'
+        },
+        {
+            step: '05',
+            title: 'Final Delivery',
+            description: 'We ensure every detail is perfected before handing over the finished space or product with care and professionalism.'
         }
     ];
 
