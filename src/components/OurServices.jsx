@@ -8,29 +8,30 @@ const services = [
     {
         icon: <FaHandshake />,
         title: 'Meet Customers',
-        description: 'We begin by understanding your goals and preferences through focused conversations.',
+        description: 'We begin by discussing your space, lifestyle needs, and design preferences to build a clear vision.',
     },
     {
         icon: <FaComments />,
         title: 'Design Discussion',
-        description: 'We brainstorm and present design ideas aligned with your vision and brand identity.',
+        description: 'We collaborate on themes, color palettes, furniture styles, and layouts tailored to your taste and space.',
     },
     {
         icon: <FaDraftingCompass />,
         title: 'Drafting Design',
-        description: 'We create detailed wireframes or mockups that visually represent the final output.',
+        description: 'We develop detailed floor plans and 3D visualizations to help you preview and refine the interior layout.',
     },
     {
         icon: <FaHome />,
         title: 'Implementation',
-        description: 'We bring the approved designs to life through clean, responsive, and functional development.',
+        description: 'We oversee the transformation process—from material selection to furniture setup—ensuring quality execution.',
     },
     {
         icon: <FaHandshake />,
         title: 'Final Delivery',
-        description: 'We ensure every detail is perfected before handing over the finished space or product with care and professionalism.'
+        description: 'We conduct a final walkthrough and deliver a fully styled, functional, and personalized interior space.',
     },
 ];
+
 
 const OurWorkFlow = () => {
     const controls = useAnimation();
