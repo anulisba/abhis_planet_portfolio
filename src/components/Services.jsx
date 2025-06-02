@@ -10,10 +10,16 @@ import {
     FaGlassMartiniAlt,
     FaCouch,
     FaHammer,
-    FaTv
+    FaTv,
+    FaPaintRoller
 } from 'react-icons/fa';
 
 const services = [
+    {
+        title: 'Interior Design',
+        description: 'Crafting stylish and functional interiors that reflect your personality and purpose.',
+        icon: <FaPaintRoller />
+    },
     {
         title: 'Residential Design & Build',
         description: 'Complete design and construction solutions for your dream home, blending aesthetics with functionality.',
@@ -35,11 +41,6 @@ const services = [
         icon: <FaPencilRuler />
     },
     {
-        title: 'Retail Spaces',
-        description: 'Strategic commercial designs that elevate customer experience and brand presence.',
-        icon: <FaShoppingBag />
-    },
-    {
         title: 'Hospitality Design',
         description: 'Creating luxurious environments for hotels and restaurants that enchant guests.',
         icon: <FaGlassMartiniAlt />
@@ -58,7 +59,7 @@ const services = [
         title: 'Exhibition Stand Design',
         description: 'Captivating displays that effectively showcase your brand at events and expos.',
         icon: <FaTv />
-    }
+    },
 ];
 
 const OurServices = () => {

@@ -12,6 +12,11 @@ const AboutPage = () => {
     }
     const services = [
         {
+            title: 'Interior Design',
+            description: 'Smart spatial planning and elegant design solutions tailored to your lifestyle.',
+            image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2185_i2bhiw.jpg',
+        },
+        {
             title: 'Residential Design & Build',
             description: 'Complete design and construction solutions for your dream home, blending aesthetics with functionality.',
             image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748697879/IMG_2210_l3cwqc.jpg'
@@ -30,11 +35,6 @@ const AboutPage = () => {
             title: 'Design Consultancy',
             description: 'Expert guidance to refine your vision from concept to execution with tailored solutions.',
             image: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
-        },
-        {
-            title: 'Retail Spaces',
-            description: 'Strategic commercial designs that elevate customer experience and brand presence.',
-            image: 'https://res.cloudinary.com/dpo91btlc/image/upload/v1748714163/futuristic-store-with-abstract-concept-architecture_ms3gii.jpg',
         },
         {
             title: 'Hospitality Design',

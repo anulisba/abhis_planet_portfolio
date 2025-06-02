@@ -22,7 +22,7 @@ const SplashScreen = ({ onComplete }) => {
     const [step, setStep] = useState(0);
 
     const companyName = "Abhi's   Planet";
-    const tagline = "Crafting digital elegance.";
+    const tagline = "Designing Spaces, Defining Lifestyles.";
     const nameLetters = companyName.split('');
     const taglineLetters = tagline.split('');
 
@@ -400,9 +400,16 @@ const LandingPage = () => {
                                             className="landing-social"
                                         >
                                             <div className="landing-social-icons">
-                                                <FaInstagram className="landing-icon" />
-                                                <FaWhatsapp className="landing-icon" />
-                                                <FaFacebookF className="landing-icon" />
+                                                <a href="https://www.instagram.com/abhisplanet/?igsh=MzR0b3dsdzBtbnp6&utm_source=qr" target="_blank" rel="noopener noreferrer">
+                                                    <FaInstagram className="landing-icon" />
+                                                </a>
+                                                <a href="https://wa.me/9747515517" target="_blank" rel="noopener noreferrer">
+                                                    <FaWhatsapp className="landing-icon" />
+                                                </a>
+                                                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+                                                    <FaFacebookF className="landing-icon" />
+                                                </a>
+
                                             </div>
                                         </motion.div>
                                     </div>

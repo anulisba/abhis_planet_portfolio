@@ -12,42 +12,49 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const reviews = [
     {
-        name: "Anna Deynah",
-        role: "UX Designer",
-        content: "The attention to detail in their designs is remarkable. They transformed our living space into something truly special that reflects our personality perfectly.",
+        name: "Neha Pradeep",
+        location: "Kochi, Kerala",
+        role: "Homeowner",
+        content: "Abhi's Planet turned our old house into a modern sanctuary. Every corner feels personalized and elegant. Truly the best interior design team in Kerala!",
         avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
     },
     {
-        name: "John Smith",
-        role: "Business Executive",
-        content: "Working with this team was a game-changer for our office space. Their innovative approach created an environment that boosts productivity and impresses clients daily.",
+        name: "Mohammed Al Nahyan",
+        location: "Abu Dhabi, UAE",
+        role: "Corporate Manager",
+        content: "Our Abu Dhabi villa now feels like a five-star retreat. The design, the color palette, and the decor are all world-class. Highly recommended!",
         avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
     },
     {
-        name: "Sarah Johnson",
-        role: "Restaurant Owner",
-        content: "Our restaurant ambiance has received countless compliments since the redesign. They perfectly captured the elegant yet comfortable atmosphere we envisioned.",
+        name: "Anjali Nair",
+        location: "Thiruvananthapuram, Kerala",
+        role: "Boutique Owner",
+        content: "The studio completely transformed my small boutique space into something stylish and inviting. My customers often ask who designed it!",
         avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp"
     },
     {
-        name: "Michael Brown",
-        role: "Architect",
-        content: "I've collaborated with many designers, but their understanding of space and light is exceptional. The way they balance functionality with aesthetics is impressive.",
+        name: "Rashid Al Amiri",
+        location: "Abu Dhabi, UAE",
+        role: "Hotel Owner",
+        content: "We hired Abhi’s Planet for our hotel lobby makeover. The results were stunning — it feels luxurious yet warm. Guests are loving the vibe!",
         avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
     },
     {
-        name: "Emily Wilson",
-        role: "Hotel Manager",
-        content: "Our boutique hotel's transformation exceeded all expectations. Guests constantly comment on the sophisticated yet welcoming interiors that create a memorable stay.",
+        name: "Arun Dev",
+        location: "Calicut, Kerala",
+        role: "Café Owner",
+        content: "Their design brought a cozy and trendy atmosphere to our café. Footfall has increased since the renovation, and people love the aesthetics!",
         avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp"
     },
     {
-        name: "David Taylor",
-        role: "Real Estate Developer",
-        content: "Their designs significantly increased property values in our development. The premium finishes and thoughtful layouts set our properties apart in the market.",
+        name: "Fatima Zayed",
+        location: "Abu Dhabi, UAE",
+        role: "Interior Enthusiast",
+        content: "I wanted a space that was minimal yet artistic — Abhi's Planet delivered beyond expectations. Their professionalism and eye for detail are unmatched.",
         avatar: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp"
     }
 ];
+
 
 // Split reviews into chunks of 3 for desktop carousel
 const desktopReviews = [];
@@ -61,11 +68,11 @@ export default function CustomerReviews() {
             <MDBContainer className="py-0">
                 <div className="our-services-header">
                     <div className='our-service-title'>
-                        <h2>Interior Solutions Tailored<br />To You</h2><div className="our-service-line-heading" />
+                        <h2>What Our Clients Say<br />About Us</h2><div className="our-service-line-heading" />
                     </div>
                     <div className="about-us-line-container">
                         <div className="about-us-line" />
-                        <span className="about-us-subtitle">OUR SERVICES</span>
+                        <span className="about-us-subtitle">CUSTOMER REVIEWS</span>
                     </div>
 
                 </div>
