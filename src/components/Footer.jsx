@@ -1,7 +1,7 @@
 import React from "react";
 import './Footer.css'
 import logo from '../assets/logo.png';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
@@ -64,12 +64,15 @@ const Footer = () => {
                             </div>
                             <div className="footer-column">
                                 <h3 className="footer-heading">Quick Links</h3>
+
+
                                 <nav className="footer-nav">
-                                    <a href="/" className="nav-link">Home</a>
-                                    <a href="/about-us" className="nav-link">About Us</a>
-                                    <a href="/all-project" className="nav-link">Projects</a>
-                                    <a href="/contact-us" className="nav-link">Contact</a>
+                                    <Link to="/" className="nav-link">Home</Link>
+                                    <Link to="/about-us" className="nav-link">About Us</Link>
+                                    <Link to="/all-project" className="nav-link">Projects</Link>
+                                    <Link to="/contact-us" className="nav-link">Contact</Link>
                                 </nav>
+
                             </div>
 
 
