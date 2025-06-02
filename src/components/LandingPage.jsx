@@ -119,7 +119,6 @@ const SplashScreen = ({ onComplete }) => {
 };
 
 
-
 const ContactPopup = ({ onClose }) => {
     const [formData, setFormData] = useState({
         name: '',
@@ -142,21 +141,20 @@ const ContactPopup = ({ onClose }) => {
         setIsSubmitting(true);
 
         emailjs.send(
-            'service_6c6do5l', // replace with your actual service ID
-            'template_4t6imcx', // replace with your actual template ID
+            'service_6c6do5l',
+            'template_4t6imcx',
             {
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
                 title: formData.subject,
                 message: formData.message,
-                to_email: 'anulisbaraj@gmail.com' // optional if defined in template
+                to_email: 'anulisbaraj@gmail.com'
             },
-            'zQ4O3aRATuQjHFFMg' // replace with your public key
+            'zQ4O3aRATuQjHFFMg'
         ).then(() => {
             setIsSubmitted(true);
             setIsSubmitting(false);
-
             setTimeout(() => {
                 onClose();
             }, 3000);
@@ -166,6 +164,7 @@ const ContactPopup = ({ onClose }) => {
             alert('Failed to send message. Please try again later.');
         });
     };
+
     return (
         <motion.div
             className="contact-popup-overlay"
@@ -174,32 +173,32 @@ const ContactPopup = ({ onClose }) => {
             exit={{ opacity: 0 }}
         >
             <motion.div
-                className="contact-popup"
+                className="contact-popup-box"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
                 transition={{ type: 'spring', damping: 25 }}
             >
-                <button className="popup-close-btn" onClick={onClose}>✕</button>
+                <button className="contact-popup-close-btn" onClick={onClose}>✕</button>
                 <h2>Interested in Our Services?</h2>
                 <p>Leave your details and we'll get back to you!</p>
 
                 <motion.div
-                    className="contact-form-popup-container"
+                    className="contact-popup-form-container"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                     viewport={{ once: true }}
                 >
                     {isSubmitted ? (
-                        <div className="success-message">
-                            <FaPaperPlane className="success-icon" />
+                        <div className="contact-popup-success-message">
+                            <FaPaperPlane className="contact-popup-success-icon" />
                             <h3>Message Sent Successfully!</h3>
                             <p>Thank you for contacting us. We'll get back to you soon.</p>
                         </div>
                     ) : (
                         <form className="contact-popup-form" onSubmit={handleSubmit}>
-                            <div className="form-group">
+                            <div className="contact-popup-form-group">
                                 <input
                                     type="text"
                                     name="name"
@@ -207,13 +206,13 @@ const ContactPopup = ({ onClose }) => {
                                     onChange={handleChange}
                                     placeholder="Your Name"
                                     required
-                                    className="form-input"
+                                    className="contact-popup-form-input"
                                 />
-                                <span className="input-highlight"></span>
+                                <span className="contact-popup-input-highlight"></span>
                             </div>
 
-                            <div className="form-row">
-                                <div className="form-group">
+                            <div className="contact-popup-form-row">
+                                <div className="contact-popup-form-group">
                                     <input
                                         type="email"
                                         name="email"
@@ -221,25 +220,25 @@ const ContactPopup = ({ onClose }) => {
                                         onChange={handleChange}
                                         placeholder="Email Address"
                                         required
-                                        className="form-input"
+                                        className="contact-popup-form-input"
                                     />
-                                    <span className="input-highlight"></span>
+                                    <span className="contact-popup-input-highlight"></span>
                                 </div>
 
-                                <div className="form-group">
+                                <div className="contact-popup-form-group">
                                     <input
                                         type="tel"
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
                                         placeholder="Phone Number"
-                                        className="form-input"
+                                        className="contact-popup-form-input"
                                     />
-                                    <span className="input-highlight"></span>
+                                    <span className="contact-popup-input-highlight"></span>
                                 </div>
                             </div>
 
-                            <div className="form-group">
+                            <div className="contact-popup-form-group">
                                 <input
                                     type="text"
                                     name="subject"
@@ -247,12 +246,12 @@ const ContactPopup = ({ onClose }) => {
                                     onChange={handleChange}
                                     placeholder="Subject"
                                     required
-                                    className="form-input"
+                                    className="contact-popup-form-input"
                                 />
-                                <span className="input-highlight"></span>
+                                <span className="contact-popup-input-highlight"></span>
                             </div>
 
-                            <div className="form-group">
+                            <div className="contact-popup-form-group">
                                 <textarea
                                     name="message"
                                     value={formData.message}
@@ -260,13 +259,13 @@ const ContactPopup = ({ onClose }) => {
                                     placeholder="Your Message"
                                     rows="4"
                                     required
-                                    className="form-textarea"
+                                    className="contact-popup-form-textarea"
                                 ></textarea>
-                                <span className="input-highlight"></span>
+                                <span className="contact-popup-input-highlight"></span>
                             </div>
 
                             <motion.button
-                                className="submit-btn"
+                                className="contact-popup-submit-btn"
                                 type="submit"
                                 disabled={isSubmitting}
                                 whileHover={{ scale: 1.03 }}
@@ -277,10 +276,10 @@ const ContactPopup = ({ onClose }) => {
                                 ) : (
                                     <>
                                         <span>Send Message</span>
-                                        <FaPaperPlane className="send-icon" />
+                                        <FaPaperPlane className="contact-popup-send-icon" />
                                     </>
                                 )}
-                                <div className="btn-hover-effect"></div>
+                                <div className="contact-popup-btn-hover-effect"></div>
                             </motion.button>
                         </form>
                     )}
@@ -289,6 +288,7 @@ const ContactPopup = ({ onClose }) => {
         </motion.div>
     );
 };
+
 
 const LandingPage = () => {
     const [showSplash, setShowSplash] = useState(false);
