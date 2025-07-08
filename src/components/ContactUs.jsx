@@ -99,8 +99,10 @@ const ContactSection = () => {
                                         <div className="info-text">
                                             <h3>Our Studio</h3>
                                             <p>Abhi's Planet </p>
-                                            <p>UAE</p>
-                                            <p>+91 9747515517</p>
+                                            <p>Dubai
+                                                Qusais
+                                                Industrial area 2</p>
+                                            <p>+971562511837</p>
                                             <p>abhisplanet2025@gmail.com</p>
                                         </div>
                                     </div>
@@ -119,11 +121,27 @@ const ContactSection = () => {
                                     </div>
 
                                     <div className="map-placeholder">
-                                        <div className="map-overlay"></div>
-                                        <div className="map-marker">
-                                            <FaMapMarkerAlt />
-                                        </div>
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.886178276538!2d55.37862017538427!3d25.274414077661387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE2JzI3LjkiTiA1NcKwMjInNTIuMyJF!5e0!3m2!1sen!2sin!4v1751958930555!5m2!1sen!2sin"
+                                            width="100%"
+                                            height="100%"
+                                            style={{ border: 0 }}
+                                            allowFullScreen=""
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                        ></iframe>
+                                        <div
+                                            style={{
+                                                position: "absolute",
+                                                top: 0,
+                                                left: 0,
+                                                width: "100%",
+                                                height: "100%",
+                                                backgroundColor: "rgba(0,0,0,0.2)",
+                                            }}
+                                        ></div>
                                     </div>
+
                                 </div>
                             </motion.div>
 

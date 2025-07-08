@@ -47,19 +47,20 @@ const Footer = () => {
                                         </svg>
                                         <div>
                                             <span className="contact-label">Phone</span>
-                                            <span className="contact-value">+91 9747515517</span>
+                                            <span className="contact-value">+971562511837</span>
                                         </div>
                                     </li>
-                                    {/* <li className="contact-item">
+                                    <li className="contact-item">
                                         <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                                         </svg>
                                         <div>
                                             <span className="contact-label">Address</span>
-                                            <span className="contact-value">Adress Line 1</span>
-                                            <span className="contact-value">Adress Line 2</span>
+                                            <span className="contact-value">Dubai</span>
+                                            <span className="contact-value">Qusais</span>
+                                            <span className="contact-value">Industrial area 2</span>
                                         </div>
-                                    </li> */}
+                                    </li>
                                 </ul>
                             </div>
                             <div className="footer-column">
