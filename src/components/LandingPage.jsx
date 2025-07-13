@@ -149,7 +149,7 @@ const ContactPopup = ({ onClose }) => {
                 phone: formData.phone,
                 title: formData.subject,
                 message: formData.message,
-                to_email: 'anulisbaraj@gmail.com'
+                to_email: 'abhisplanet2025@gmail.com'
             },
             'zQ4O3aRATuQjHFFMg'
         ).then(() => {

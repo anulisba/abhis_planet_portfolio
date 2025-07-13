@@ -18,6 +18,7 @@ const ContactSection = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [activeMap, setActiveMap] = useState('dubai');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,7 +38,7 @@ const ContactSection = () => {
                 phone: formData.phone,
                 title: formData.subject,
                 message: formData.message,
-                to_email: 'anulisbaraj@gmail.com' // optional if defined in template
+                to_email: 'abhisplanet2025@gmail.com' // optional if defined in template
             },
             'zQ4O3aRATuQjHFFMg' // replace with your public key
         ).then(() => {
@@ -97,17 +98,15 @@ const ContactSection = () => {
                                             <FaMapMarkerAlt className="icon" />
                                         </div>
                                         <div className="info-text">
-                                            <h3>Our Studio</h3>
-                                            <p>Abhi's Planet </p>
-                                            <p>Dubai
-                                                Qusais
-                                                Industrial area 2</p>
+                                            <h3>Our Studio – Dubai</h3>
+                                            <p>Qusais, Industrial Area 2, Dubai</p>
                                             <p>+971562511837</p>
-                                            <p>abhisplanet2025@gmail.com</p>
+                                            <h3>Our Studio – Kerala</h3>
+                                            <p>FABDEC INTERIORS PRIVATE LIMITED</p>
+                                            <p>Kundanoor, Maradu, Ernakulam - 682304</p>
+                                            <p>+91 97475 15517</p>
                                         </div>
                                     </div>
-
-
 
                                     <div className="info-card">
                                         <div className="info-icon">
@@ -116,31 +115,52 @@ const ContactSection = () => {
                                         <div className="info-text">
                                             <h3>Working Hours</h3>
                                             <p>Monday - Saturday: 9am - 6pm</p>
-
                                         </div>
                                     </div>
 
-                                    <div className="map-placeholder">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.886178276538!2d55.37862017538427!3d25.274414077661387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE2JzI3LjkiTiA1NcKwMjInNTIuMyJF!5e0!3m2!1sen!2sin!4v1751958930555!5m2!1sen!2sin"
-                                            width="100%"
-                                            height="100%"
-                                            style={{ border: 0 }}
-                                            allowFullScreen=""
-                                            loading="lazy"
-                                            referrerPolicy="no-referrer-when-downgrade"
-                                        ></iframe>
-                                        <div
-                                            style={{
-                                                position: "absolute",
-                                                top: 0,
-                                                left: 0,
-                                                width: "100%",
-                                                height: "100%",
-                                                backgroundColor: "rgba(0,0,0,0.2)",
-                                            }}
-                                        ></div>
+
+                                    <div className="map-tabs">
+                                        <div className="map-tab-buttons">
+                                            <button
+                                                className={activeMap === 'dubai' ? 'active' : ''}
+                                                onClick={() => setActiveMap('dubai')}
+                                            >
+                                                Dubai Office
+                                            </button>
+                                            <button
+                                                className={activeMap === 'kerala' ? 'active' : ''}
+                                                onClick={() => setActiveMap('kerala')}
+                                            >
+                                                Kerala Office
+                                            </button>
+                                        </div>
+
+                                        <div className="map-placeholder">
+                                            {activeMap === 'dubai' && (
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.886178276538!2d55.37862017538427!3d25.274414077661387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE2JzI3LjkiTiA1NcKwMjInNTIuMyJF!5e0!3m2!1sen!2sin!4v1751958930555!5m2!1sen!2sin"
+                                                    width="100%"
+                                                    height="300"
+                                                    style={{ border: 0 }}
+                                                    allowFullScreen=""
+                                                    loading="lazy"
+                                                    referrerPolicy="no-referrer-when-downgrade"
+                                                ></iframe>
+                                            )}
+                                            {activeMap === 'kerala' && (
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3929.963287605679!2d76.3158454750303!3d9.937012690165187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwNTYnMTMuMyJOIDc2wrAxOScwNi4zIkU!5e0!3m2!1sen!2sin!4v1752421803120!5m2!1sen!2sin"
+                                                    width="100%"
+                                                    height="300"
+                                                    style={{ border: 0 }}
+                                                    allowFullScreen=""
+                                                    loading="lazy"
+                                                    referrerPolicy="no-referrer-when-downgrade"
+                                                ></iframe>
+                                            )}
+                                        </div>
                                     </div>
+
 
                                 </div>
                             </motion.div>

@@ -173,6 +173,35 @@
     font-weight: 300;
 }
 
+.map-tabs {
+    margin-top: 10px;
+}
+
+.map-tab-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.map-tab-buttons button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-bottom: 1px solid gray;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.map-tab-buttons button.active,
+.map-tab-buttons button:hover {
+    border-bottom: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+
 /* Map Placeholder */
 .map-placeholder {
     position: relative;
